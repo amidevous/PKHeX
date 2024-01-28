@@ -1,12 +1,12 @@
 Name:           pkhex
-Version:        22.12.18
+Version:        24.01.12
 Release:        1%{?dist}
 
 Summary:        Pokémon core series save editor, programmed in C#.
 
 License:        LGPLv2+
 URL:            https://github.com/amidevous/PKHeX
-Source0:        https://github.com/amidevous/PKHeX/releases/download/24.01.12/pkhex-22.12.18.tar.xz
+Source0:        https://github.com/amidevous/PKHeX/releases/download/24.01.12/pkhex-24.01.12.tar.xz
 
 BuildArch:      noarch
 AutoReqProv: no
