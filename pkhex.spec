@@ -7,23 +7,12 @@ Summary:        Pokémon core series save editor, programmed in C#.
 License:        LGPLv2+
 URL:            https://github.com/amidevous/PKHeX
 Source0:        https://github.com/amidevous/PKHeX/releases/download/24.01.12/pkhex-24.01.12.tar.xz
-
 BuildArch:      noarch
 AutoReqProv: no
-
-# need arch-specific wine, not available everywhere:
-# - adopted from wine.spec
-ExclusiveArch:  %{ix86} x86_64 %{arm} aarch64
-# - explicitly not ppc64* to hopefully not confuse koschei
-ExcludeArch:    ppc64 ppc64le
-
 BuildRequires:  make
 BuildRequires:  desktop-file-utils
-
-Requires:       wine-common wine winetricks
-Requires:       cabextract gzip unzip wget which
-Requires:       hicolor-icon-theme
-Requires:       (kdialog if kdialog else zenity)
+Requires:       wine
+Requires:       cabextract gzip unzip wget
 
 %description
 Pokémon core series save editor, programmed in C#.
