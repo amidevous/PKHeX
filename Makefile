@@ -8,7 +8,7 @@ install:
 	install -D -m 755 "launcher" "$(DESTDIR)$(PREFIX)/bin/pkhex"
 	# pkhex version 22.12.18 latest full work with wine
 	# require wine or wine-stable or winehq-stable 9.0 or + and winetricks 20240105 or +
-	#download https://projectpokemon.org/home/files/file/1-pkhex/?do=download&csrfKey=cd29ab3c78e0744900e1bfd604bbfd83 PKHeX (221218).zip
+	#download https://projectpokemon.org/home/files/file/1-pkhex/?do=download&csrfKey=cd29ab3c78e0744900e1bfd604bbfd83 PKHeX (24.01.12).zip
 	#backup
 	#https://github.com/amidevous/PKHeX/releases/download/24.01.12/PKHeX.24.01.12.zip
 	wget https://github.com/amidevous/PKHeX/releases/download/24.01.12/PKHeX.24.01.12.zip -O PKHeX.24.01.12.zip
