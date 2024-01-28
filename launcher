@@ -24,12 +24,13 @@ export DOTNET_BUNDLE_EXTRACT_BASE_DIR="C:\dotnet_bundle_extract"
 
 if [ ! -d "$PKHEX_DATA_DIRECTORY" ]; then
   echo 'Installing PKHeX...'
-  mkdir -p "${PKHEX_DATA_DIRECTORY}"
+  mkdir -p "${PKHEX_DATA_DIRECTORY}/bak"
   cd ${PKHEX_DATA_DIRECTORY}
   cp -R /usr/share/pkhex/PKHeX.exe ./
   wget https://download.visualstudio.microsoft.com/download/pr/f18288f6-1732-415b-b577-7fb46510479a/a98239f751a7aed31bc4aa12f348a9bf/windowsdesktop-runtime-8.0.1-win-x64.exe -qO windowsdesktop-runtime-8.0.1-win-x64.exe
   wine windowsdesktop-runtime-8.0.1-win-x64.exe /quiet
   rm  -f windowsdesktop-runtime-8.0.1-win-x64.exe
+  rm -f cfg.json
   wine PKHeX.exe
   echo 'Completed installing PKHeX.'
   exit
@@ -64,8 +65,8 @@ case "$1" in
     rm  -f windowsdesktop-runtime-8.0.1-win-x64.exe
     ;;
   *)
-    # cd ${PKHEX_DATA_DIRECTORY}
-    cd /
+    cd ${PKHEX_DATA_DIRECTORY}
+    rm -f cfg.json
     wine ${PKHEX_DATA_DIRECTORY}/PKHeX.exe "$@"
     wineserver -w
     ;;
