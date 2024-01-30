@@ -1,0 +1,3 @@
+#!/bin/bash
+require="File Version                    : 23.10.11.0"
+actual=$(exiftool -FileVersion "$HOME/.local/share/pkhex/PKHeX.exe")
