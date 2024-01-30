@@ -1,6 +1,6 @@
 Name:           pkhex
 Version:        24.01.12
-Release:        1%{?dist}
+Release:        10%{?dist}
 
 Summary:        Pokémon core series save editor, programmed in C#.
 
@@ -11,7 +11,7 @@ BuildArch:      noarch
 AutoReqProv: no
 BuildRequires:  make
 BuildRequires:  desktop-file-utils
-Requires:       wine
+Requires:       wine winetricks
 Requires:       cabextract gzip unzip wget
 
 %description
@@ -44,4 +44,3 @@ We do not support or condone cheating at the expense of others. Do not use signi
 /usr/bin/pkhex
 /usr/share/applications/pkhex.desktop
 /usr/share/pixmaps/pkhex.png
-/usr/share/pkhex/PKHeX.exe
