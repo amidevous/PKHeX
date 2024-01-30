@@ -4,15 +4,14 @@
 # install bin
 #sudo install -d "/usr/share/pkhex/"
 #sudo install -D -m 755 "launcher" "$(DESTDIR)$(PREFIX)/bin/pkhex"
-#download https://projectpokemon.org/home/files/file/1-pkhex/?do=download&csrfKey=cd29ab3c78e0744900e1bfd604bbfd83 PKHeX (24.01.12).zip
+#download https://projectpokemon.org/home/files/file/1-pkhex/?do=download&version=8064&csrfKey=cd29ab3c78e0744900e1bfd604bbfd83 PKHeX (23.10.11).zip
 #backup
-#download https://github.com/amidevous/PKHeX/releases/download/24.01.12/PKHeX.24.01.12.zip
-#unzip PKHeX.24.01.12.zip
-#rm -f PKHeX.24.01.12.zip
+#download https://github.com/amidevous/PKHeX/releases/download/24.01.12/PKHeX.23.10.11.zip
+#unzip PKHeX.23.10.11.zip
+#rm -f PKHeX.23.10.11.zip
 #sudo install -D -m 644 "PKHeX.exe" "$(DESTDIR)$(PREFIX)/share/pkhex/PKHeX.exe"
 # require install wine or wine-stable or winehq-stable + winetricks
-#sudo rm -rf "/usr/share/pkhex/wineprefixes/pkhex"
-
+#sudo rm -rf "$HOME/.local/share/pkhex/"
 XDG_DATA_HOME="$HOME/.local/share"
 PKHEX_DATA_DIRECTORY="$HOME/.local/share/pkhex"
 export WINEDEBUG="${WINEDEBUG--all}"
@@ -27,9 +26,7 @@ if [ ! -d "$PKHEX_DATA_DIRECTORY" ]; then
   mkdir -p "${PKHEX_DATA_DIRECTORY}/bak"
   cd ${PKHEX_DATA_DIRECTORY}
   cp -R /usr/share/pkhex/PKHeX.exe ./
-  wget https://download.visualstudio.microsoft.com/download/pr/f18288f6-1732-415b-b577-7fb46510479a/a98239f751a7aed31bc4aa12f348a9bf/windowsdesktop-runtime-8.0.1-win-x64.exe -qO windowsdesktop-runtime-8.0.1-win-x64.exe
-  wine windowsdesktop-runtime-8.0.1-win-x64.exe /quiet
-  rm  -f windowsdesktop-runtime-8.0.1-win-x64.exe
+  winetricks -q --force dotnetdesktop7 win10
   rm -f cfg.json
   wine PKHeX.exe
   echo 'Completed installing PKHeX.'
@@ -60,14 +57,24 @@ case "$1" in
     echo 'Updating'
     cd ${PKHEX_DATA_DIRECTORY}
     cp -R /usr/share/pkhex/PKHeX.exe ./
-    wget https://download.visualstudio.microsoft.com/download/pr/f18288f6-1732-415b-b577-7fb46510479a/a98239f751a7aed31bc4aa12f348a9bf/windowsdesktop-runtime-8.0.1-win-x64.exe -qO windowsdesktop-runtime-8.0.1-win-x64.exe
-    wine windowsdesktop-runtime-8.0.1-win-x64.exe /quiet
-    rm  -f windowsdesktop-runtime-8.0.1-win-x64.exe
+    winetricks -q --force dotnetdesktop7 win10
     ;;
   *)
     cd ${PKHEX_DATA_DIRECTORY}
     rm -f cfg.json
-    wine ${PKHEX_DATA_DIRECTORY}/PKHeX.exe "$@"
+    wget "https://github.com/amidevous/PKHeX/raw/master/linux-stable-version" -qO linux-stable-version
+    source linux-stable-version
+    if [[ $require == $actual ]]
+        then
+        wine PKHeX.exe "$@"
+    else
+        rm -f PKHeX.exe $filename
+        wget https://github.com/amidevous/PKHeX/releases/download/24.01.12/$filename -qO $filename
+        unzip $filename
+        rm -f $filename
+        winetricks -q --force dotnetdesktop7 win10
+        wine PKHeX.exe "$@"
+    fi
     wineserver -w
     ;;
 esac
