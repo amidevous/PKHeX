@@ -16,17 +16,23 @@ XDG_DATA_HOME="$HOME/.local/share"
 PKHEX_DATA_DIRECTORY="$HOME/.local/share/pkhex"
 export WINEDEBUG="${WINEDEBUG--all}"
 export WINEPREFIX="$HOME/.local/share/pkhex/wineprefixes/pkhex"
-#this require net 7 and net 8 or error
+#this require for net 7 and net 8 or error
 export DOTNET_ROOT="C:\Program Files\dotnet"
-#this require net 7 and net 8 or error
+#this require for net 7 and net 8 or error
 export DOTNET_BUNDLE_EXTRACT_BASE_DIR="C:\dotnet_bundle_extract"
 
 if [ ! -d "$PKHEX_DATA_DIRECTORY" ]; then
   echo 'Installing PKHeX...'
   mkdir -p "${PKHEX_DATA_DIRECTORY}/bak"
   cd ${PKHEX_DATA_DIRECTORY}
-  cp -R /usr/share/pkhex/PKHeX.exe ./
-  winetricks -q --force dotnetdesktop7 win10
+  wget "https://github.com/amidevous/PKHeX/raw/master/linux-stable-version" -qO linux-stable-version
+  source linux-stable-version
+  rm -f PKHeX.exe $filename linux-stable-version
+  wget https://github.com/amidevous/PKHeX/releases/download/24.01.12/$filename -qO $filename
+  unzip $filename
+  rm -f $filename
+  mkdir -p $WINEPREFIX
+  $winetrickinstall
   rm -f cfg.json
   wine PKHeX.exe
   echo 'Completed installing PKHeX.'
@@ -56,14 +62,21 @@ case "$1" in
   'update')
     echo 'Updating'
     cd ${PKHEX_DATA_DIRECTORY}
-    cp -R /usr/share/pkhex/PKHeX.exe ./
-    winetricks -q --force dotnetdesktop7 win10
+    wget "https://github.com/amidevous/PKHeX/raw/master/linux-stable-version" -qO linux-stable-version
+    source linux-stable-version
+    rm -f  linux-stable-version
+    rm -f PKHeX.exe $filename
+    wget https://github.com/amidevous/PKHeX/releases/download/24.01.12/$filename -qO $filename
+    unzip $filename
+    rm -f $filename
+    $winetrickinstall
     ;;
   *)
     cd ${PKHEX_DATA_DIRECTORY}
     rm -f cfg.json
     wget "https://github.com/amidevous/PKHeX/raw/master/linux-stable-version" -qO linux-stable-version
     source linux-stable-version
+    rm -f  linux-stable-version
     if [[ $require == $actual ]]
         then
         wine PKHeX.exe "$@"
@@ -72,7 +85,7 @@ case "$1" in
         wget https://github.com/amidevous/PKHeX/releases/download/24.01.12/$filename -qO $filename
         unzip $filename
         rm -f $filename
-        winetricks -q --force dotnetdesktop7 win10
+        $winetrickinstall
         wine PKHeX.exe "$@"
     fi
     wineserver -w
