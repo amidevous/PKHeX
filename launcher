@@ -1,16 +1,6 @@
 #!/usr/bin/bash
-# pkhex version 22.12.18 latest full work with wine
+# pkhex for linux and macosx
 # require wine or wine-stable or winehq-stable 9.0 or + and winetricks 20240105 or +
-# install bin
-#sudo install -d "/usr/share/pkhex/"
-#sudo install -D -m 755 "launcher" "$(DESTDIR)$(PREFIX)/bin/pkhex"
-#download https://projectpokemon.org/home/files/file/1-pkhex/?do=download&version=8064&csrfKey=cd29ab3c78e0744900e1bfd604bbfd83 PKHeX (23.10.11).zip
-#backup
-#download https://github.com/amidevous/PKHeX/releases/download/24.01.12/PKHeX.23.10.11.zip
-#unzip PKHeX.23.10.11.zip
-#rm -f PKHeX.23.10.11.zip
-#sudo install -D -m 644 "PKHeX.exe" "$(DESTDIR)$(PREFIX)/share/pkhex/PKHeX.exe"
-# require install wine or wine-stable or winehq-stable + winetricks
 #sudo rm -rf "$HOME/.local/share/pkhex/"
 XDG_DATA_HOME="$HOME/.local/share"
 PKHEX_DATA_DIRECTORY="$HOME/.local/share/pkhex"
