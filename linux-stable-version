@@ -1,4 +1,5 @@
 #!/bin/bash
 require="File Version                    : 23.10.11.0"
 actual="$(exiftool -FileVersion "$HOME/.local/share/pkhex/PKHeX.exe")"
-filename="PKHeX.23.10.11.zip "
+filename="PKHeX.23.10.11.zip"
+winetrickinstall="winetricks -q --force dotnetdesktop7 win10"
