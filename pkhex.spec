@@ -1,6 +1,6 @@
 Name:           pkhex
 Version:        24.01.12
-Release:        10%{?dist}
+Release:        73%{?dist}
 
 Summary:        Pokémon core series save editor, programmed in C#.
 
