@@ -3,7 +3,7 @@ Section: contrib/otherosfs
 Priority: optional
 Maintainer: Debian Wine Team <debian-wine@lists.debian.org>
 Build-Depends:
- debhelper-compat (= 13),
+ debhelper-compat (= 10),
 Standards-Version: 4.6.2
 Homepage: https://github.com/kwsch/PKHeX/
 Vcs-Git: https://github.com/kwsch/PKHeX.git
