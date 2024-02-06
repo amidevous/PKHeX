@@ -36,7 +36,7 @@ Windows binary latest version
 
 https://projectpokemon.org/home/files/file/1-pkhex/
 
-Linux packages version 22.12.18 latest work on wine
+Linux packages version 23.10.11 latest work on wine
 
 https://software.opensuse.org//download.html?project=home%3Aamidevousgmail%3Apkhex&package=pkhex
 
