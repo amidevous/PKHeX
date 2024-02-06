@@ -66,7 +66,7 @@ PKHeX can be opened with IDEs such as [Visual Studio](https://visualstudio.micro
 
 install wine 9.0 (multiarch require) or + and winetricks 20240105 or +
 
-for Mac OSX install Xcode with apple web site an wine with winehq dmg and build winetricks with official github
+for Mac OSX install Xcode with apple web site and wine-stable winetricks zenity and wget and with homebrew
 
 ```
 git clone https://github.com/amidevous/PKHeX.git
