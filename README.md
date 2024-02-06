@@ -66,6 +66,8 @@ PKHeX can be opened with IDEs such as [Visual Studio](https://visualstudio.micro
 
 install wine 9.0 (multiarch require) or + and winetricks 20240105 or +
 
+for Mac OSX install Xcode with apple web site an wine with winehq dmg and build winetricks with official github
+
 ```
 git clone https://github.com/amidevous/PKHeX.git
 cd PKHeX
@@ -76,29 +78,57 @@ sudo mv $PWD/build/* /
 full manual
 
 ```
+#install the prerequisites according to your system
+
+#Ubuntu/Debian/Raspbian with official repository (not use winehq repository or winehq-* package)
+
+sudo apt-get -y install wine winetricks wget zenity make
+
+# or
+
+sudo apt-get -y install wine-stable winetricks wget zenity make
+
+sudo winetricks --self-update
+
+#fedora install rpm fusion free and rpm fussion non free repository (not use winehq repository or winehq-* package)
+
+#https://rpmfusion.org/Configuration/
+
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+sudo dnf -y install wine winetricks wget zenity make
+
+sudo winetricks --self-update
+
+#for Mac OSx install xcode and homebrew require
+
+#visit https://developer.apple.com/download/applications/
+#and https://brew.sh/
+#for last information
+#if your computer is not compatible with the latest version of xcodes
+#you can download an older version that will be compatible by simply changing the version number in the final url example
+#actual latest version
+#https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_15.3_beta/Xcode_15.3_beta.xip
+#https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_15.2/Xcode_15.2.xip
+#but my mac is only compatible with version 13 this url will be functional
+#https://download.developer.apple.com/Developer_Tools/Xcode_13.2/Xcode_13.2.xip
+
+brew install wget
+
+brew install zenity
+
+brew install --cask wine-stable
+
+brew install winetricks
+
 sudo wget https://github.com/amidevous/PKHeX/raw/master/launcher -O /usr/bin/pkhex
 
 sudo wget https://github.com/amidevous/PKHeX/raw/master/pkhex.desktop -O /usr/share/applications/pkhex.desktop
 
 sudo wget https://github.com/amidevous/PKHeX/raw/master/icon.png -O /usr/share/pixmaps/icon.png
 
-#Ubuntu/Debian/Raspbian with official repository (not use winehq repository)
 
-sudo apt-get -y install wine winetricks
-
-sudo winetricks --self-update
-
-#fedora install rpm fusion free and rpm fussion non free repository (not use winehq repository)
-
-#https://rpmfusion.org/Configuration/
-
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-sudo dnf -y install wine winetricks
-
-sudo winetricks --self-update
-
-#clean all $HOME folder for reset
+#clean all $HOME folder for reset for all Unix
 
 rm -rf $HOME/.local/share/pkhex
 ```
