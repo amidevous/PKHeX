@@ -121,6 +121,8 @@ brew install --cask wine-stable
 
 brew install winetricks
 
+#once the prerequisites are installed you can install by executing the following command
+
 sudo wget https://github.com/amidevous/PKHeX/raw/master/launcher -O /usr/bin/pkhex
 
 sudo wget https://github.com/amidevous/PKHeX/raw/master/pkhex.desktop -O /usr/share/applications/pkhex.desktop
@@ -128,7 +130,11 @@ sudo wget https://github.com/amidevous/PKHeX/raw/master/pkhex.desktop -O /usr/sh
 sudo wget https://github.com/amidevous/PKHeX/raw/master/icon.png -O /usr/share/pixmaps/icon.png
 
 
-#clean all $HOME folder for reset for all Unix
+#clean all $HOME folder for reset
 
 rm -rf $HOME/.local/share/pkhex
+
+#when the new version is published you must delete the /opt/pkhex directory with administrator rights
+
+sudo rm -rf /opt/pkhex
 ```
