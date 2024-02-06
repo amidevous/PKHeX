@@ -66,7 +66,7 @@ PKHeX can be opened with IDEs such as [Visual Studio](https://visualstudio.micro
 
 install wine 9.0 (multiarch require) or + and winetricks 20240105 or +
 
-for Mac OSX install Xcode with apple web site and wine-stable winetricks zenity and wget and with homebrew
+for Mac OSX install Xcode with apple web site and wine-stable winetricks zenity and wget with homebrew
 
 ```
 git clone https://github.com/amidevous/PKHeX.git
@@ -112,6 +112,8 @@ sudo winetricks --self-update
 #https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_15.2/Xcode_15.2.xip
 #but my mac is only compatible with version 13 this url will be functional
 #https://download.developer.apple.com/Developer_Tools/Xcode_13.2/Xcode_13.2.xip
+#to know the compatibility of the xcodes development tools version visit this page
+#https://developer.apple.com/documentation/xcode-release-notes/
 
 brew install wget
 
