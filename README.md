@@ -48,7 +48,13 @@ https://github.com/kwsch/PKHeX
 
 ## Building for Linux or MacOSX online version 23.10.11 latest work on wine
 
-install wine 9.0 (multiarch require) or + and winetricks 20240105 or +
+install dependencie
+
+wine version = 9.0 (multiarch require) or + 
+winetricks version =  20240105 or +
+zenity
+wget
+make
 
 for Mac OSX install Xcode with apple web site and wine-stable winetricks zenity and wget with homebrew
 
