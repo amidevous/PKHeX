@@ -67,7 +67,7 @@ PKHeX can be opened with IDEs such as [Visual Studio](https://visualstudio.micro
 install wine 9.0 (multiarch require) or + and winetricks 20240105 or +
 
 ```
-git clone https://github.com/kwsch/PKHeX.git
+git clone https://github.com/amidevous/PKHeX.git
 DESTDIR=$PWD/build make DESTDIR=$PWD/build install
 sudo mv $PWD/build/* /
 ```
