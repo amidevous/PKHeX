@@ -42,25 +42,9 @@ https://software.opensuse.org//download.html?project=home%3Aamidevousgmail%3Apkh
 
 ## Building
 
-PKHeX is a Windows Forms application which requires [.NET 8.0](https://dotnet.microsoft.com/download/dotnet/8.0).
+for windows version visite official project
 
-The executable can be built with any compiler that supports C# 12.
-
-### Build Configurations
-
-Use the Debug or Release build configurations when building. There isn't any platform specific code to worry about!
-
-## Dependencies
-
-PKHeX's QR code generation code is taken from [QRCoder](https://github.com/codebude/QRCoder), which is licensed under [the MIT license](https://github.com/codebude/QRCoder/blob/master/LICENSE.txt).
-
-PKHeX's shiny sprite collection is taken from [pokesprite](https://github.com/msikma/pokesprite), which is licensed under [the MIT license](https://github.com/msikma/pokesprite/blob/master/LICENSE).
-
-PKHeX's Pokémon Legends: Arceus sprite collection is taken from the [National Pokédex - Icon Dex](https://www.deviantart.com/pikafan2000/art/National-Pokedex-Version-Delta-Icon-Dex-824897934) project and its abundance of collaborators and contributors.
-
-### IDE
-
-PKHeX can be opened with IDEs such as [Visual Studio](https://visualstudio.microsoft.com/downloads/) by opening the .sln or .csproj file.
+https://github.com/kwsch/PKHeX
 
 ## Building for Linux or MacOSX online version 23.10.11 latest work on wine
 
