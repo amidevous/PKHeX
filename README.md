@@ -50,10 +50,14 @@ https://github.com/kwsch/PKHeX
 
 install dependencie
 
-wine version = 9.0 (multiarch require) or + 
+wine version = 9.0 (multiarch require) or +
+
 winetricks version =  20240105 or +
+
 zenity
+
 wget
+
 make
 
 for Mac OSX install Xcode with apple web site and wine-stable winetricks zenity and wget with homebrew
