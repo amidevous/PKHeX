@@ -62,7 +62,7 @@ PKHeX's Pokémon Legends: Arceus sprite collection is taken from the [National P
 
 PKHeX can be opened with IDEs such as [Visual Studio](https://visualstudio.microsoft.com/downloads/) by opening the .sln or .csproj file.
 
-## Building for Linux or MacOSX online version 22.12.18 latest work on wine
+## Building for Linux or MacOSX online version 23.10.11 latest work on wine
 
 install wine 9.0 (multiarch require) or + and winetricks 20240105 or +
 
