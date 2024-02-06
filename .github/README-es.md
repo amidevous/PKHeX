@@ -1,4 +1,4 @@
-PKHeX PARA Unix (Linux y Mac OSX con vino)
+PKHeX PARA Unix (Linux y Mac OSX con wine)
 =====
 ![License](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
