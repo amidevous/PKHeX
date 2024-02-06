@@ -1,4 +1,4 @@
-PKHeX
+PKHeX PARA Unix (Linux y Mac OSX con vino)
 =====
 ![License](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
@@ -63,7 +63,8 @@ PKHeX se puede abrir con un IDE como [Visual Studio](https://visualstudio.micros
 instale Wine 9.0 (requiere multiarca) o + y Winetricks 20240105 o +
 
 ```
-git clone https://github.com/kwsch/PKHeX.git
+git clone https://github.com/amidevous/PKHeX.git
+cd PKHeX
 DESTDIR=$PWD/build make DESTDIR=$PWD/build install
 sudo mv $PWD/build/* /
 ```
@@ -73,19 +74,29 @@ sudo mv $PWD/build/* /
 manual completo
 
 ```
-wget https://github.com/amidevous/PKHeX/releases/download/24.01.12/PKHeX.221218.zip -O PKHeX.221218.zip
-rm -f "PKHeX.exe"
-unzip PKHeX.221218.zip
-rm -f PKHeX.221218.zip
-install -D -m 644 "PKHeX.exe" "$HOME/.local/share/pkhex/PKHeX.exe"
-install -d "$HOME/.local/share/pkhex/"
-install -d "$HOME/.local/share/pkhex/wineprefixes/pkhex"
-install -d "$HOME/.local/share/pkhex/wineprefixes/pkhex/drive_c"
-wget "https://raw.githubusercontent.com/amidevous/PKHeX/master/launcher" -O "launcher"
-sudo install -D -m 755 "launcher" "/usr/bin/pkhex"
-wget "https://raw.githubusercontent.com/amidevous/PKHeX/master/icon.png" -O "icon.png"
-sudo install -D -m 644 "icon.png" "/usr/share/pixmaps/pkhex.png"
-wget "https://raw.githubusercontent.com/amidevous/PKHeX/master/pkhex.desktop" -O "pkhex.desktop"
-sudo install -D -m 644 "pkhex.desktop" "/usr/usr/share/applications/pkhex.desktop"
-WINEPREFIX="$HOME/.local/share/pkhex/wineprefixes/pkhex" winetricks -q --force dotnet40 dotnet45 dotnet452 dotnet46 dotnet461 dotnet462 dotnet471 dotnet472 dotnet48 dotnetcoredesktop3 dotnetdesktop6 win10 >/dev/null 2>&1
+sudo wget https://github.com/amidevous/PKHeX/raw/master/launcher -O /usr/bin/pkhex
+
+sudo wget https://github.com/amidevous/PKHeX/raw/master/pkhex.desktop -O /usr/share/applications/pkhex.desktop
+
+sudo wget https://github.com/amidevous/PKHeX/raw/master/icon.png -O /usr/share/pixmaps/icon.png
+
+#Ubuntu/Debian/Raspbian with official repository (not use winehq repository)
+
+sudo apt-get -y install wine winetricks
+
+sudo winetricks --self-update
+
+#fedora install rpm fusion free and rpm fussion non free repository (not use winehq repository)
+
+#https://rpmfusion.org/Configuration/
+
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+sudo dnf -y install wine winetricks
+
+sudo winetricks --self-update
+
+#clean all $HOME folder for reset
+
+rm -rf $HOME/.local/share/pkhex
 ```
