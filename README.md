@@ -73,7 +73,7 @@ https://docs.fedoraproject.org/en-US/epel/
 
 ```
 
-sudo dnf -y install wine winetricks wget zenity make
+sudo dnf -y install wine winetricks wget zenity make gz gunzip xz
 
 sudo winetricks --self-update
 
