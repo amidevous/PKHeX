@@ -46,7 +46,7 @@ for windows version visite official project
 
 https://github.com/kwsch/PKHeX
 
-## Building for Linux or MacOSX online version 23.10.11 latest work on wine
+## Building for Linux or Mac OSX online version 23.10.11 latest work on wine
 
 
 install the prerequisites according to your system
