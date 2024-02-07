@@ -48,19 +48,100 @@ https://github.com/kwsch/PKHeX
 
 ## Building for Linux or MacOSX online version 23.10.11 latest work on wine
 
-install dependencie
 
-wine version = 9.0 (multiarch require) or +
+install the prerequisites according to your system
 
-winetricks version =  20240105 or +
+Ubuntu/Debian/Raspbian with official repository (not use winehq repository or winehq-* package)
 
-zenity
 
-wget
+```
 
-make
+sudo apt-get -y install wine-stable winetricks wget zenity make gz gunzip xz
 
-for Mac OSX install Xcode with apple web site and wine-stable winetricks zenity and wget with homebrew
+sudo winetricks --self-update
+
+
+```
+
+
+#Fedora/Red Hat/Centos/Alma Linux and other fork
+
+for RHEL System add Fedora Epel Repository
+
+https://docs.fedoraproject.org/en-US/epel/
+
+
+```
+
+sudo dnf -y install wine winetricks wget zenity make
+
+sudo winetricks --self-update
+
+
+```
+
+
+
+for Mac OSx install xcode
+
+visit https://developer.apple.com/download/applications/
+
+Login in the site with you Apple ID
+
+accept the developer agreement
+
+download and install a version of xcode compatible with your device
+
+see the release notes to find out which version is compatible with your Mac OSX
+
+https://developer.apple.com/documentation/xcode-release-notes/
+
+with your browser identify on the site developer.apple.com you download any version of xcodes by changing the version number in the url here are 3 examples
+
+updated to versions of February 7, 2024
+
+actual beta
+
+https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_15.3_beta/Xcode_15.3_beta.xip
+
+
+actual stable
+
+https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_15.2/Xcode_15.2.xip
+
+old version 13.4.1
+
+https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_13.4.1/Xcode_13.4.1.xip
+
+old version 13.2
+
+https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_13.2/Xcode_13.2.xip
+
+old version 13
+
+https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_13/Xcode_13.xip
+
+etc
+
+install homebrew and dependency
+
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install wget
+
+brew install zenity
+
+brew install --cask wine-stable
+
+brew install winetricks
+
+
+```
+
+build
+
 
 ```
 git clone https://github.com/amidevous/PKHeX.git
@@ -72,50 +153,8 @@ sudo mv $PWD/build/* /
 full manual
 
 ```
-#install the prerequisites according to your system
 
-#Ubuntu/Debian/Raspbian with official repository (not use winehq repository or winehq-* package)
 
-sudo apt-get -y install wine winetricks wget zenity make
-
-# or
-
-sudo apt-get -y install wine-stable winetricks wget zenity make
-
-sudo winetricks --self-update
-
-#fedora install rpm fusion free and rpm fussion non free repository (not use winehq repository or winehq-* package)
-
-#https://rpmfusion.org/Configuration/
-
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-sudo dnf -y install wine winetricks wget zenity make
-
-sudo winetricks --self-update
-
-#for Mac OSx install xcode and homebrew require
-
-#visit https://developer.apple.com/download/applications/
-#and https://brew.sh/
-#for last information
-#if your computer is not compatible with the latest version of xcodes
-#you can download an older version that will be compatible by simply changing the version number in the final url example
-#actual latest version
-#https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_15.3_beta/Xcode_15.3_beta.xip
-#https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_15.2/Xcode_15.2.xip
-#but my mac is only compatible with version 13 this url will be functional
-#https://download.developer.apple.com/Developer_Tools/Xcode_13.2/Xcode_13.2.xip
-#to know the compatibility of the xcodes development tools version visit this page
-#https://developer.apple.com/documentation/xcode-release-notes/
-
-brew install wget
-
-brew install zenity
-
-brew install --cask wine-stable
-
-brew install winetricks
 
 #once the prerequisites are installed you can install by executing the following command
 
