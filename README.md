@@ -56,7 +56,7 @@ Ubuntu/Debian/Raspbian with official repository (not use winehq repository or wi
 
 ```
 
-sudo apt-get -y install wine-stable winetricks wget zenity make gz gunzip xz
+sudo apt-get -y install wine-stable winetricks wget zenity make gzip xz
 
 sudo winetricks --self-update
 
@@ -73,7 +73,7 @@ https://docs.fedoraproject.org/en-US/epel/
 
 ```
 
-sudo dnf -y install wine winetricks wget zenity make gz gunzip xz
+sudo dnf -y install wine winetricks wget zenity make gzip xz
 
 sudo winetricks --self-update
 
