@@ -1,0 +1,6 @@
+msgid "PKHeX For Linux and Mac OSX with wine"
+msgstr "PKHeX Pour Linux et Mac OSX avec wine"
+msgid "please enter you administrator password"
+msgstr "SVP entrez votre mot de passe administrateur"
+msgid "please enter correct administrator password for create folder /opt/pkhex for all user"
+msgstr "SVP entrez le bon mot de passe administrateur pour créer le dossier /opt/pkhex pour tous les utilisateur"
