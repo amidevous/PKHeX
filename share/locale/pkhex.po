@@ -1,5 +1,5 @@
-msgid "PKHeX For Linux and Mac OSX with proton-wine"
-msgstr "PKHeX For Linux and Mac OSX with proton-wine"
+msgid "PKHeX For Linux and Mac OSX with wine"
+msgstr "PKHeX For Linux and Mac OSX with wine"
 msgid "please enter administrator password"
 msgstr "please enter administrator password"
 msgid "please enter correct administrator login for create folder /opt/pkhex for all user"
