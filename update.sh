@@ -12,10 +12,14 @@ cd /tmp/pkhexinstall
 wget https://github.com/amidevous/PKHeX/archive/refs/heads/master.tar.gz -qO master.tar.gz
 tar -xf master.tar.gz
 cd /tmp/pkhexinstall/PKHeX-master
-msgfmt --output-file=/tmp/pkhexinstall/PKHeX-master/share/locale/en/LC_MESSAGES/pkhex.mo /tmp/pkhexinstall/PKHeX-master/share/locale/en/LC_MESSAGES/pkhex.po
-msgfmt --output-file=/tmp/pkhexinstall/PKHeX-master/share/locale/fr/LC_MESSAGES/pkhex.mo /tmp/pkhexinstall/PKHeX-master/share/locale/fr/LC_MESSAGES/pkhex.po
 msgfmt --output-file=/tmp/pkhexinstall/PKHeX-master/share/locale/aa/LC_MESSAGES/pkhex.mo /tmp/pkhexinstall/PKHeX-master/share/locale/aa/LC_MESSAGES/pkhex.po
 msgfmt --output-file=/tmp/pkhexinstall/PKHeX-master/share/locale/ab/LC_MESSAGES/pkhex.mo /tmp/pkhexinstall/PKHeX-master/share/locale/ab/LC_MESSAGES/pkhex.po
+msgfmt --output-file=/tmp/pkhexinstall/PKHeX-master/share/locale/af/LC_MESSAGES/pkhex.mo /tmp/pkhexinstall/PKHeX-master/share/locale/af/LC_MESSAGES/pkhex.po
+
+
+
+msgfmt --output-file=/tmp/pkhexinstall/PKHeX-master/share/locale/en/LC_MESSAGES/pkhex.mo /tmp/pkhexinstall/PKHeX-master/share/locale/en/LC_MESSAGES/pkhex.po
+msgfmt --output-file=/tmp/pkhexinstall/PKHeX-master/share/locale/fr/LC_MESSAGES/pkhex.mo /tmp/pkhexinstall/PKHeX-master/share/locale/fr/LC_MESSAGES/pkhex.po
 export TEXTDOMAIN=pkhex
 export TEXTDOMAINDIR=/tmp/pkhexinstall/PKHeX-master/share/locale
 progtitle=$(gettext "PKHeX For Linux and Mac OSX with wine")
