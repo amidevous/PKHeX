@@ -1,0 +1,27 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-08 10:57+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+# auto translate with
+# https://rephrasely.com/translate/translate-english-to-afrikaans
+# please fork for help or solve translation problem
+
+msgid "PKHeX For Linux and Mac OSX with wine"
+msgstr "PKHeX Vir Linux en Mac OSX met wyn"
+
+msgid "please enter you administrator password"
+msgstr "Voer asseblief jou administrateur wagwoord in"
+
+msgid "please enter correct administrator password"
+msgstr "Voer asseblief die korrekte administrateurwagwoord in"
+
+msgid "for install or update PKHeX"
+msgstr "om PKHeX te installeer of op te dateer"
