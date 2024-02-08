@@ -155,26 +155,14 @@ DESTDIR=$PWD/build make DESTDIR=$PWD/build install
 sudo mv $PWD/build/* /
 ```
 
-full manual
+full manual (use for problem for reinstall or update)
 
 ```
 
+wget https://github.com/amidevous/PKHeX/raw/master/update.sh -O update.sh
 
+chmod +x update.sh
 
-#once the prerequisites are installed you can install by executing the following command
+./update.sh
 
-sudo wget https://github.com/amidevous/PKHeX/raw/master/launcher -O /usr/bin/pkhex
-
-sudo wget https://github.com/amidevous/PKHeX/raw/master/pkhex.desktop -O /usr/share/applications/pkhex.desktop
-
-sudo wget https://github.com/amidevous/PKHeX/raw/master/icon.png -O /usr/share/pixmaps/icon.png
-
-
-#clean all $HOME folder for reset
-
-rm -rf $HOME/.local/share/pkhex
-
-#when the new version is published you must delete the /opt/pkhex directory with administrator rights
-
-sudo rm -rf /opt/pkhex
 ```
