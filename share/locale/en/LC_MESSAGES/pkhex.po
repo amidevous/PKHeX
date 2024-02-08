@@ -19,5 +19,6 @@ msgstr "please enter you administrator password"
 
 msgid "please enter correct administrator password"
 msgstr "please enter correct administrator password"
-msgid "for create folder /opt/pkhex for all users"
-msgstr "for create folder /opt/pkhex for all users"
+
+msgid "for install or update PKHeX"
+msgstr "for install or update PKHeX"
