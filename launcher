@@ -11,6 +11,7 @@ export DOTNET_ROOT="C:\Program Files\dotnet"
 export DOTNET_BUNDLE_EXTRACT_BASE_DIR="C:\dotnet_bundle_extract"
 
 if [ ! -d "$PKHEX_DATA_DIRECTORY" ]; then
+  rm -rf $HOME/.local/.share/pkhex
   wget "https://github.com/amidevous/PKHeX/raw/master/update.sh" -qO update.sh
   chmod +x update.sh
   ./update.sh
@@ -40,6 +41,7 @@ case "$1" in
     ;;
   'update')
     echo 'Updating'
+    rm -rf $HOME/.local/.share/pkhex
     wget "https://github.com/amidevous/PKHeX/raw/master/update.sh" -qO update.sh
     chmod +x update.sh
     ./update.sh
@@ -47,6 +49,7 @@ case "$1" in
     ;;
   *)
     cd ${PKHEX_DATA_DIRECTORY}
+    rm -rf $HOME/.local/.share/pkhex
     rm -f cfg.json
     /opt/pkhex/bin/wine PKHeX.exe "$@"
     /opt/pkhex/bin/wineserver -w
