@@ -15,9 +15,6 @@ cd /tmp/pkhexinstall/PKHeX-master
 msgfmt --output-file=/tmp/pkhexinstall/PKHeX-master/share/locale/aa/LC_MESSAGES/pkhex.mo /tmp/pkhexinstall/PKHeX-master/share/locale/aa/LC_MESSAGES/pkhex.po
 msgfmt --output-file=/tmp/pkhexinstall/PKHeX-master/share/locale/ab/LC_MESSAGES/pkhex.mo /tmp/pkhexinstall/PKHeX-master/share/locale/ab/LC_MESSAGES/pkhex.po
 msgfmt --output-file=/tmp/pkhexinstall/PKHeX-master/share/locale/af/LC_MESSAGES/pkhex.mo /tmp/pkhexinstall/PKHeX-master/share/locale/af/LC_MESSAGES/pkhex.po
-
-
-
 msgfmt --output-file=/tmp/pkhexinstall/PKHeX-master/share/locale/en/LC_MESSAGES/pkhex.mo /tmp/pkhexinstall/PKHeX-master/share/locale/en/LC_MESSAGES/pkhex.po
 msgfmt --output-file=/tmp/pkhexinstall/PKHeX-master/share/locale/fr/LC_MESSAGES/pkhex.mo /tmp/pkhexinstall/PKHeX-master/share/locale/fr/LC_MESSAGES/pkhex.po
 export TEXTDOMAIN=pkhex
@@ -63,15 +60,19 @@ done
   cp -R /tmp/pkhexinstall/PKHeX-master/share/locale/* /opt/pkhex/share/locale/
   cd /opt/pkhex
   rm -rf /tmp/pkhexinstall/
-  wget https://github.com/amidevous/PKHeX/releases/download/24.01.12/PKHeX.23.10.11.zip -qO PKHeX.23.10.11.zip
-  unzip PKHeX.23.10.11.zip
-  rm -f PKHeX.23.10.11.zip
+  wget https://github.com/amidevous/PKHeX/releases/download/24.01.12/PKHeX.24.01.12.zip -qO PKHeX.24.01.12.zip
+  unzip PKHeX.24.01.12.zip
+  rm -f PKHeX.24.01.12.zip
   mkdir -p $WINEPREFIX
-  wget https://github.com/amidevous/PKHeX/releases/download/24.01.12/wine-GE-Proton8-25-x86_64.tar.xz -qO wine-GE-Proton8-25-x86_64.tar.xz
-  tar -xf wine-GE-Proton8-25-x86_64.tar.xz
-  cp -R lutris-GE-Proton8-25-x86_64/* /opt/pkhex/
-  rm -rf /opt/pkhex/lutris-GE-Proton8-25-x86_64/
-  /opt/pkhex/bin/winetricks -q --force dotnetdesktop7 win10
+  wget https://github.com/amidevous/PKHeX/releases/download/24.01.12/wine-GE-9.1-x86_64.tar.xz -qO wine-GE-9.1-x86_64.tar.xz
+  tar -xvf /home/andy/wine-ge-custom/builds/runners/wine/wine-GE-9.1-x86_64.tar.xz
+  cp -R  /opt/pkhex/GE-9.1-x86_64/*  /opt/pkhex/
+  rm -rf /opt/pkhex/GE-9.1-x86_64/
+  wget https://download.visualstudio.microsoft.com/download/pr/f18288f6-1732-415b-b577-7fb46510479a/a98239f751a7aed31bc4aa12f348a9bf/windowsdesktop-runtime-8.0.1-win-x64.exe -O windowsdesktop-runtime-8.0.1-win-x64.exe
+  /opt/pkhex/bin/wine windowsdesktop-runtime-8.0.1-win-x64.exe /q
+  rm -f windowsdesktop-runtime-8.0.1-win-x64.exe
   rm -f cfg.json
   /opt/pkhex/bin/wine PKHeX.exe
   echo 'Completed installing PKHeX.'
+
+  
