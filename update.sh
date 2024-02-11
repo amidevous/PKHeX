@@ -74,5 +74,3 @@ done
   rm -f cfg.json
   /opt/pkhex/bin/wine PKHeX.exe
   echo 'Completed installing PKHeX.'
-
-  
